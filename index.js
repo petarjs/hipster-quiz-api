@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var helmet = require('helmet')
 var bodyParser = require('body-parser');
 var RateLimit = require('express-rate-limit');
+var cors = require('cors');
 
 var Quiz = require('./quiz.model').model;
 var Question = require('./question.model').model;
@@ -13,6 +14,7 @@ mongoose.connect('mongodb://localhost/quiz');
 var app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use(helmet({
   hsts: false
 }));
