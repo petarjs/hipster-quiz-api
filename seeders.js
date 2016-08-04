@@ -83,6 +83,7 @@ coffeeQuiz
         console.log('saved q1');
         coffeeQuiz.questions.push(q1);
       });
+
     var q2 = new Question({
       question: 'Which of these coffees usually has the lowest acidity?',
       answers: ['Ethiopia', 'Bolivia', 'India', 'Yemen'],
@@ -105,7 +106,7 @@ coffeeQuiz
       .save()
       .then(function(q) {
         console.log('saved q3');
-        coffeeQuiz.questions.push(q2);
+        coffeeQuiz.questions.push(q3);
       });
   });
 
