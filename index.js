@@ -41,6 +41,12 @@ app.get('/quizzes/:id', function(req, res) {
   });
 });
 
+app.get('/questions/:id', function(req, res) {
+  Question.findById(req.params.id, function(question) {
+    res.status(200).json(question);
+  }, { correctIndex: 0 });
+});
+
 app.post('/questions/:id/answer', function(req, res) {
   var questionId = req.params.id;
   var answer = req.body.answer;

@@ -11,9 +11,10 @@ QuestionSchema.statics.findByName = function(name, cb) {
   return this.find({ name: new RegExp('^' + name, 'i') }, cb);
 };
 
-QuestionSchema.statics.findById = function(id, cb) {
+QuestionSchema.statics.findById = function(id, cb, fields) {
+  fields = fields || {};
   return this
-    .findOne({ _id: id })
+    .findOne({ _id: id }, fields)
     .exec(function(err, question) {
       if(!err) {
         cb(question);
