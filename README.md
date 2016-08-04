@@ -35,3 +35,7 @@ Returns `{ "correct": Boolean }`
 
 - id - Id of the question we're answering
 - answer (body param) - Answer string we want to check if correct
+
+## License
+
+MIT
